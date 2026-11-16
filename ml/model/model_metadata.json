@@ -1,0 +1,41 @@
+{
+  "model": "RandomForest",
+  "features": [
+    "meals_served",
+    "kitchen_staff",
+    "temperature_C",
+    "humidity_percent",
+    "day_of_week",
+    "special_event",
+    "past_waste_kg",
+    "staff_experience_enc",
+    "waste_category_enc"
+  ],
+  "target": "food_waste_kg",
+  "train_rows": 637,
+  "val_rows": 136,
+  "test_rows": 138,
+  "val_metrics": {
+    "MAE_kg": 4.800733641814414,
+    "RMSE_kg": 6.9542555543010804,
+    "R2": 0.9521505836640556
+  },
+  "test_metrics": {
+    "MAE_kg": 4.7552480382640425,
+    "RMSE_kg": 6.6398838816712376,
+    "R2": 0.9258138069456754
+  },
+  "experience_classes": [
+    "beginner",
+    "expert",
+    "intermediate"
+  ],
+  "category_classes": [
+    "GRAINS",
+    "MEAT",
+    "MeAt",
+    "Vegetables",
+    "dairy"
+  ],
+  "split_method": "time_ordered_70_15_15"
+}
