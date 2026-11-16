@@ -21,5 +21,11 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok", version: "2.0", project: "CanteenCarbon" });
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`CanteenCarbon API running on port ${PORT}`));
+// Export for Vercel serverless
+module.exports = app;
+
+// Start local server only when not in serverless env
+if (require.main === module) {
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => console.log(`CanteenCarbon API running on port ${PORT}`));
+}

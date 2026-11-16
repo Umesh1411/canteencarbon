@@ -9,7 +9,9 @@ import {
 import { auth, db } from "./firebase";
 import { CANTEENS, getCanteen } from "./canteens";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+// In production (Vercel), requests are routed via the same domain: /api/*
+// In local dev, Vite proxy forwards /api/* → localhost:4000
+const API = import.meta.env.VITE_API_URL || "";
 const GEMINI_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
 
 const EMISSION_FACTORS = {
